@@ -12,5 +12,5 @@ def sum_(list_):
 g_sum = 0.0
 flag_ = True
 while flag_:
-    seq = input("Введите числа через пробел: ").split(" ")
+    seq = input("Введите числа через пробел: ").split()
     print(f"Сумма чисел равна - {sum_(seq)}")

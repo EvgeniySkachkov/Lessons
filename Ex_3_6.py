@@ -1,16 +1,11 @@
-def int_func(word_):
-    return word_.title()
-
-
-def int_func_2(string_):
-    string_ = list(string_.split(" "))
-    for i, el in enumerate(string_):
-        string_[i] = int_func(el)
-    string_ = ' '.join(string_)
-    return string_
+def capitalize_func(text):
+    def int_func(word: str):
+        return f"{word[0].upper()}{word[1:]}"
+    words = text.split()
+    return ' '.join(list(map(lambda word: int_func(word), words)))
 
 
 word = input("Введите слово: ")
-print(int_func(word))
+print(capitalize_func(word))
 str_ = input("Введите несколько слов через пробел: ")
-print(int_func_2(str_))
+print(capitalize_func(str_))

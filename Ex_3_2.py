@@ -1,11 +1,17 @@
 def person(name, second_name, b_date, city, email, phone):
-    return name, second_name, b_date, city, email, phone
+    return f'{second_name} {name}\n' \
+           f'Дата рождения: {b_date}\n' \
+           f'Город: {city}\n' \
+           f'Почта: {email}\n' \
+           f'Телефон: {phone}\n' \
 
 
-name_ = input("Введите имя: ")
-second_name_ = input("Введите фамилию: ")
-b_date_ = input("Введите дату рождения: ")
-city_ = input("Введите город проживания: ")
-email_ = input("Введите Email: ")
-phone_ = input("ВВведите номер телефона: ")
-print(person(name=name_, second_name=second_name_, b_date=b_date_, city=city_, email=email_, phone=phone_))
+print(person(
+    name=input("Введите имя: "),
+    second_name=input("Введите фамилию: "),
+    b_date=input("Введите дату рождения: "),
+    city=input("Введите город: "),
+    email=input("Введите почту: "),
+    phone=input("Введите телефон: "),
+))
+
