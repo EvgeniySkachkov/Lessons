@@ -1,21 +1,20 @@
 from time import sleep
-
+from itertools import cycle
 
 class TrafficLight:
-    __color = ''
+    __color = 'red'
+    __COUNTER = 0
+    __STOP = 21
 
     def running(self):
-        u_time = int(input('Сколько секунд удерживать зелёный свет на светофоре?: '))
-        for _ in range(3):
-            TrafficLight.__color = 'красный'
-            print(TrafficLight.__color)
-            sleep(7)
-            TrafficLight.__color = 'жёлтый'
-            print(TrafficLight.__color)
-            sleep(2)
-            TrafficLight.__color = 'зелёный'
-            print(TrafficLight.__color)
-            sleep(u_time)
+        for el in cycle([['red', 7], ['yellow', 2], ['green', 5]]):
+            self.__color = el[0]
+            print(self.__color)
+            sleep(el[1])
+            if self.__COUNTER == self.__STOP:
+                break
+            else:
+                self.__COUNTER += 1
 
 
 light = TrafficLight()
